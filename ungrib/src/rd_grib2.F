@@ -492,7 +492,7 @@ C  SET ARGUMENTS
               endif
 
               ! Scale lat/lon values to 0-180, default range is 1e6.
-              if (abs(map%lat1).ge.scale_factor) then
+              if (map%lat1.ge.scale_factor) then
                  map%lat1 = map%lat1/scale_factor
               endif
               if (map%lon1.ge.scale_factor) then 
@@ -757,7 +757,8 @@ C  SET ARGUMENTS
      &                           (10. ** (-1. * gfld%ipdtmpl(11)))
 		 if ( level .lt. pmin ) cycle MATCH_LOOP
               elseif((gfld%ipdtmpl(10).eq.105).or.
-     &               (gfld%ipdtmpl(10).eq.118))then
+     &               (gfld%ipdtmpl(10).eq.118).or.
+     &               (gfld%ipdtmpl(10).eq.150))then
                  ! Hybrid level (range from 1 to N)
                  level=gfld%ipdtmpl(12)
               elseif(gfld%ipdtmpl(10).eq.104) then
