@@ -845,6 +845,10 @@ name=HGTT
         output=no
         interp_option=nearest_neighbor
 ========================================
+name=GEOPT
+        output=no
+        interp_option=nearest_neighbor
+========================================
 name=SNOWH
         interp_option=four_pt+average_4pt
         masked=water 
